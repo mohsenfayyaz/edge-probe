@@ -18,7 +18,7 @@ from datasets import load_dataset, load_metric
 from transformers import AutoTokenizer
 import torch.nn as nn
 import torch.optim as optim
-from tqdm import tqdm
+from tqdm.auto import tqdm
 import torch
 import numpy as np
 import random
@@ -30,20 +30,21 @@ import sentencepiece
 import diskcache as dc
 import shutil
 
-shutil.rmtree('cache_tmp_electra', ignore_errors=True)
-cache = dc.Cache('cache_tmp_electra', size_limit=int(40e9))
+shutil.rmtree('cache_tmp', ignore_errors=True)
+cache = dc.Cache('cache_tmp', size_limit=int(40e9))
 # cache['key'] = torch.zeros((13, 768))
 # %timeit cache['key']
 
 """# Config"""
 GLUE_TASKS = ["cola", "mnli", "mnli-mm", "mrpc", "qnli", "qqp", "rte", "sst2", "stsb", "wnli"]
-# task = "mnli"
+task = "mnli"
 # model_checkpoint = "distilbert-base-uncased"
 # model_checkpoint = "albert-base-v2"
 # model_checkpoint = "bert-base-uncased"
 # model_checkpoint = "xlnet-base-cased"
 # model_checkpoint = "google/electra-base-discriminator"
 # model_checkpoint = "howey/electra-base-cola"
+model_checkpoint = "TehranNLP-org/bert-base-uncased-avg-mnli-2e-5-21"
 batch_size = 32
 LEARNING_RATE = 5e-4
 MAX_LENGTH = 128
@@ -113,7 +114,7 @@ class Utils:
         return np.array(idxs)
 
 
-tokenizer = AutoTokenizer.from_pretrained(model_checkpoint, use_fast=False)
+tokenizer = AutoTokenizer.from_pretrained(model_checkpoint, use_fast=True)
 
 
 def preprocess_function(examples):
@@ -373,9 +374,10 @@ class Trainer:
             tokenized_input_ids = torch.tensor(tokenized_input["input_ids"]).to(self.device)
             # special_tokens_mask = torch.tensor(tokenized_input["special_tokens_mask"]).to(self.device)
             attention_mask = torch.tensor(tokenized_input["attention_mask"]).to(self.device)
+            token_type_ids = torch.tensor(tokenized_input["token_type_ids"]).to("cuda")
 
             self.language_model.eval()
-            outputs = self.language_model(tokenized_input_ids)
+            outputs = self.language_model(input_ids=tokenized_input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids)
             current_hidden_states = self.pooling(outputs.hidden_states, attention_mask)
             cache[key] = current_hidden_states
         else:
@@ -494,8 +496,7 @@ class Trainer:
         print(trainer.classifiers[0])
 
 
-trainer = Trainer(model_checkpoint, num_labels, encoded_dataset, model, metric, DEVICE, pooling_method=pooling_method,
-                  fine_tune_to_layer=fine_tune_to_layer)
+trainer = Trainer(model_checkpoint, num_labels, encoded_dataset, model, metric, DEVICE, pooling_method=pooling_method)
 
 trainer.summary()
 
