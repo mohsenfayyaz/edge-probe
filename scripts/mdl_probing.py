@@ -35,97 +35,6 @@ class Dataset_info:
         self.ignore_classes = ignore_classes  # ignore other class in rel (semeval)
         self.manual_text = manual_text
 
-# model_checkpoint = "bert-base-uncased"
-# model_checkpoint = "bert-base-cased"
-# model_checkpoint = "bert-large-uncased"
-# model_checkpoint = "distilbert-base-cased"
-# model_checkpoint = "distilbert-base-uncased"
-# model_checkpoint = "google/bert_uncased_L-12_H-768_A-12"
-# model_checkpoint = "roberta-base"
-# model_checkpoint = "roberta-large"
-
-# model_checkpoint = "bert-base-multilingual-uncased"
-# model_checkpoint = "xlm-roberta-base"
-
-# model_checkpoint = "HooshvareLab/bert-base-parsbert-uncased"
-
-# model_checkpoint = "google/electra-base-discriminator"
-# model_checkpoint = "google/electra-large-discriminator"
-
-# model_checkpoint = 'xlnet-base-cased'
-# model_checkpoint = 'mohsenfayyaz/xlnet-base-cased-zihangdai'
-# model_checkpoint = "xlnet-large-cased"
-
-# model_checkpoint = "albert-base-v2"
-# model_checkpoint = "albert-large-v2"
-# model_checkpoint = "albert-xlarge-v2"
-# model_checkpoint = "albert-xxlarge-v2"
-
-# model_checkpoint = "howey/bert-base-uncased-rte"
-
-# model_checkpoint = "TehranNLP-org/bert-base-uncased-avg-mnli-2e-5-21"
-# model_checkpoint = "TehranNLP-org/xlnet-base-cased-avg-mnli-2e-5-21"
-# model_checkpoint = "TehranNLP-org/electra-base-avg-mnli-2e-5-21"
-
-# model_checkpoint = "YituTech/conv-bert-base"
-
-# model_checkpoint = "t5-small"
-# model_checkpoint = "t5-base"
-# model_checkpoint = "t5-large"
-
-# model_checkpoint = "facebook/bart-base"
-# model_checkpoint = "facebook/bart-large-xsum"
-
-# model_checkpoint = "gpt2"
-# model_checkpoint = "google/pegasus-arxiv"
-# model_checkpoint = "google/t5-large-ssm"
-# model_checkpoint = "google/t5-small-ssm-nq"
-# model_checkpoint = "google/mt5-base"
-# model_checkpoint = "google/pegasus-large"
-# model_checkpoint = "microsoft/mpnet-base"
-
-# model_checkpoint = "glove.twitter.27B.200d"
-
-# model_checkpoint = "elmo"
-
-
-## LINGUISTIC KNOWLEDGE ##
-# my_dataset_info = Dataset_info("const", num_of_spans=1)  # Dependency Labeling
-# my_dataset_info = Dataset_info("ud", num_of_spans=2)  # Dependency Labeling
-# my_dataset_info = Dataset_info("ner", num_of_spans=1)  # Named Entity Labeling
-# my_dataset_info = Dataset_info("srl", num_of_spans=2)  # Semantic Role Labeling
-# my_dataset_info = Dataset_info("coref", num_of_spans=2)  # Coreference Ontonotes
-# my_dataset_info = Dataset_info("dpr", num_of_spans=2)  # Coreference Winograd
-# my_dataset_info = Dataset_info("semeval", num_of_spans=2, ignore_classes=["Other"])  # Relation Classification
-# my_dataset_info = Dataset_info("semeval", num_of_spans=2)  # Relation Classification
-
-### TOXICICITY ##
-# my_dataset_info = Dataset_info("hatexplain", num_of_spans=1)
-# my_dataset_info = Dataset_info("hatexplain-fullspan", num_of_spans=1)
-# my_dataset_info = Dataset_info("offenseval2019", num_of_spans=1)
-# my_dataset_info = Dataset_info("jigsaw_bias", num_of_spans=1)
-
-### METAPHOR ###
-# my_dataset_info = Dataset_info("vua_verb", num_of_spans=1)
-# my_dataset_info = Dataset_info("vua_pos", num_of_spans=1)
-# my_dataset_info = Dataset_info("trofi", num_of_spans=1)
-# my_dataset_info = Dataset_info("trofi_nospan", num_of_spans=1)
-
-# my_dataset_info = Dataset_info("lcc", num_of_spans=2)
-# my_dataset_info = Dataset_info("lcc_src_concept", num_of_spans=1, ignore_classes=["OTHER", 'ANIMAL', 'EMOTION_EXPERIENCER', 'STORY', 'INSANITY', 'NATURAL_PHYSICAL_FORCE', 'CLOTHING', 'JOURNEY', 'CROP', 'DOWNWARD_MOVEMENT', 'OBJECT_HANDLING', 'ENERGY', 'MEDICINE', 'UPWARD_MOVEMENT', 'LIGHT', 'LEADER', 'TOOL', 'MONSTER', 'BUSINESS', 'COMPETITION', 'FOOD', 'A_GOD', 'HIGH_LOCATION', 'SCIENCE', 'MAGIC', 'PATHWAY', 'LIFE_STAGE', 'SIZE', 'WEAKNESS', 'GIFT', 'ADDICTION', 'ENSLAVEMENT', 'THEFT', 'BARRIER', 'FAMILY', 'MAZE', 'FIRE', 'PORTAL', 'VEHICLE', 'LOW_LOCATION', 'FURNISHINGS', 'CONTAMINATION', 'FABRIC', 'GAP', 'FORWARD_MOVEMENT', 'PLIABILITY', 'A_RIGHT', 'WEATHER', 'SERVANT', 'TEMPERATURE', 'RULE_ENFORCER', 'CONTAINER', 'MORAL_DUTY', 'FORCEFUL_EXTRACTION', 'FACTORY', 'BLOOD_STREAM', 'ACCIDENT', 'POSITION_AND_CHANGE_OF_POSITION_ON_A_SCALE', 'BACKWARD_MOVEMENT', 'DARKNESS', 'DESIRE', 'AVERSION', 'OBESITY', 'PARASITE', 'HAZARDOUS_GEOGRAPHIC_FEATURE', 'STAGE', 'DESTROYER', 'BATTLE', 'PHYSICAL_OBJECT', 'IMPURITY', 'HIGH_POINT', 'GEOGRAPHIC_FEATURE', 'GOAL_DIRECTED', 'VERTICAL_SCALE', 'DELICACY', 'MOVEMENT_ON_A_VERTICAL_SCALE', 'RACE', 'LOW_POINT', 'TRIBUTE', 'SCHISM', 'INDUSTRY', 'BLOOD_SYSTEM', 'EMPLOYEE', 'GREED', 'GOURMET_CUISINE', 'CONTROL', 'MATERIAL'])  ## Use Second(Target) Span to Predict Src
-# my_dataset_info = Dataset_info("lcc_src_target_concept", num_of_spans=2, ignore_classes=["OTHER"])
-
-# my_dataset_info = Dataset_info("lcc_fa", num_of_spans=2)
-# my_dataset_info = Dataset_info("lcc_en_fa", num_of_spans=2)
-# my_dataset_info = Dataset_info("lcc_en+fa_fa", num_of_spans=2)
-# my_dataset_info = Dataset_info("lcc_fa_en", num_of_spans=2)
-
-# my_dataset_info = Dataset_info("lcc_es", num_of_spans=2)
-# my_dataset_info = Dataset_info("lcc_en+es_es", num_of_spans=2)
-
-# my_dataset_info = Dataset_info("lcc_ru", num_of_spans=2)
-# my_dataset_info = Dataset_info("lcc_en+ru_ru", num_of_spans=2)
-
 POOL_METHOD = "attn"  # 'max', 'attn'
 BATCH_SIZE = 32
 #SEED = 0
@@ -152,7 +61,13 @@ dataset_info_dict = {
     "lcc": Dataset_info("lcc", num_of_spans=2),
     "lcc_fa": Dataset_info("lcc_fa", num_of_spans=2),
     "lcc_es": Dataset_info("lcc_es", num_of_spans=2),
-    "lcc_ru": Dataset_info("lcc_ru", num_of_spans=2)
+    "lcc_ru": Dataset_info("lcc_ru", num_of_spans=2),
+    "lcc_en_fa": Dataset_info("lcc_en_fa", num_of_spans=2),
+    "lcc_en_es": Dataset_info("lcc_en_es", num_of_spans=2),
+    "lcc_en_ru": Dataset_info("lcc_en_ru", num_of_spans=2),
+    "lcc_es_fa": Dataset_info("lcc_es_fa", num_of_spans=2),
+    "lcc_es_ru": Dataset_info("lcc_es_ru", num_of_spans=2),
+    "lcc_fa_ru": Dataset_info("lcc_fa_ru", num_of_spans=2)
 }
 
 model_checkpoint = sys.argv[1]
@@ -309,6 +224,31 @@ class Dataset_handler:
             # self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_train10_current.json', data_type="train", fraction = 1)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="test", fraction = frac)
+        elif dataset_info.dataset_name == "lcc_en_es":
+            frac = 1
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_train10_current.json', data_type="train", fraction = 0.72926148)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="dev", fraction = 0.01)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="test", fraction = frac)
+        elif dataset_info.dataset_name == "lcc_en_ru":
+            frac = 1
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_train10_current.json', data_type="train", fraction = 0.439840076)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="dev", fraction = 0.01)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_test10_current.json', data_type="test", fraction = frac)
+        elif dataset_info.dataset_name == "lcc_es_fa":
+            frac = 1
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_train10_current.json', data_type="train", fraction = 0.63774912)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="dev", fraction = 0.01)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="test", fraction = frac)
+        elif dataset_info.dataset_name == "lcc_es_ru":
+            frac = 1
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_train10_current.json', data_type="train", fraction = 0.60313081856)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="dev", fraction = 0.01)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_test10_current.json', data_type="test", fraction = frac)
+        elif dataset_info.dataset_name == "lcc_fa_ru":
+            frac = 1
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', data_type="train", fraction = 0.9457179930)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="dev", fraction = 0.01)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_fa_en":
             frac = 1
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', data_type="train", fraction = frac)
