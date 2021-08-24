@@ -158,7 +158,13 @@ dataset_info_dict = {
     "lcc_en_ru": Dataset_info("lcc_en_ru", num_of_spans=2),
     "lcc_es_fa": Dataset_info("lcc_es_fa", num_of_spans=2),
     "lcc_es_ru": Dataset_info("lcc_es_ru", num_of_spans=2),
-    "lcc_fa_ru": Dataset_info("lcc_fa_ru", num_of_spans=2)
+    "lcc_fa_ru": Dataset_info("lcc_fa_ru", num_of_spans=2),
+    "lcc_fa_en": Dataset_info("lcc_fa_en", num_of_spans=2),
+    "lcc_fa_es": Dataset_info("lcc_fa_es", num_of_spans=2),
+    "lcc_ru_es": Dataset_info("lcc_ru_es", num_of_spans=2),
+    "lcc_ru_fa": Dataset_info("lcc_ru_fa", num_of_spans=2),
+    "lcc_ru_en": Dataset_info("lcc_ru_en", num_of_spans=2),
+    "lcc_es_en": Dataset_info("lcc_es_en", num_of_spans=2),
 }
 
 model_checkpoint = sys.argv[1]
@@ -344,6 +350,31 @@ class Dataset_handler:
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', data_type="train", fraction = frac)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="test", fraction = frac)
+        elif dataset_info.dataset_name == "lcc_es_en":
+            frac = 1
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_train10_current.json', data_type="train", fraction = frac)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="dev", fraction = 0.01)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="test", fraction = frac)
+        elif dataset_info.dataset_name == "lcc_ru_en":
+            frac = 1
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_train10_current.json', data_type="train", fraction = frac)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_test10_current.json', data_type="dev", fraction = 0.01)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="test", fraction = frac)
+        elif dataset_info.dataset_name == "lcc_fa_es":
+            frac = 1
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', data_type="train", fraction = frac)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="dev", fraction = 0.01)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="test", fraction = frac)
+        elif dataset_info.dataset_name == "lcc_ru_es":
+            frac = 1
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_train10_current.json', data_type="train", fraction = frac)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_test10_current.json', data_type="dev", fraction = 0.01)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="test", fraction = frac)
+        elif dataset_info.dataset_name == "lcc_ru_fa":
+            frac = 1
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_train10_current.json', data_type="train", fraction = frac)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_test10_current.json', data_type="dev", fraction = 0.01)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_en+fa_fa":
             frac = 1
             self.merge_files(['./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', 
@@ -1284,7 +1315,7 @@ class Edge_probe_trainer(Trainer):
                 # print(f"loss: {running_loss / steps}")
 
             self.update_history(epoch + 1, train_loss = running_loss / steps)
-            self.draw_weights(epoch)
+            # self.draw_weights(epoch)
             self.save_history(self.history)
 
     def calc_loss(self, tokenized_dataset, batch_size=16, print_metrics=False, just_micro=False, desc=""):
@@ -1452,4 +1483,4 @@ print("Dataset:", my_dataset_info.dataset_name)
 print(f"Batch Size: {BATCH_SIZE}")
 a = my_edge_probe_trainer.edge_probe_model.summary(do_print=True)
 
-my_edge_probe_trainer.train(batch_size = BATCH_SIZE, epochs=40)
+my_edge_probe_trainer.train(batch_size = BATCH_SIZE, epochs=35)
