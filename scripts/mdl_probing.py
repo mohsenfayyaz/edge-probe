@@ -1314,7 +1314,7 @@ class MDL_probe_trainer(Trainer):
         print('[%d] loss:' % (epoch))
         print("Train Loss:", self.history[portion_idx]["loss"]["train"][-1])
         print("Test Loss:", self.history[portion_idx]["loss"]["test"][-1])
-        print("MDL Loss:", self.history[portion_idx]["loss"]["mdl"][-1])
+        # print("MDL Loss:", self.history[portion_idx]["loss"]["mdl"][-1])
 
 
     def draw_weights(self, epoch, portion_idx, comprehensive=False):
@@ -1326,7 +1326,7 @@ class MDL_probe_trainer(Trainer):
         plt.show()
 
         if comprehensive:
-            print(self.history)
+            # print(self.history)
             w = self.history[portion_idx]["metrics"]["online_codelength"][-1]
             plt.bar(np.arange(len(w), dtype=int), w, color="magenta")
             plt.ylabel('Online Codelength')
