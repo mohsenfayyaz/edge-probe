@@ -1312,6 +1312,12 @@ class Edge_probe_trainer(Trainer):
                 running_loss += loss.item()
                 steps += 1
                 self.vprint("Done")
+                
+                
+                #if i/batch_size % 50 == 0:
+                #    self.update_history(epoch + 1, train_loss = running_loss / steps)
+                #    self.draw_weights(epoch)
+                
                 # print(f"loss: {running_loss / steps}")
 
             self.update_history(epoch + 1, train_loss = running_loss / steps)
@@ -1383,14 +1389,14 @@ class Edge_probe_trainer(Trainer):
         self.history["loss"]["test"].append(test_loss)
 
         self.history["metrics"]["micro_f1"]["dev"].append(dev_f1)
-        self.history["metrics"]["macro_f1"]["dev"].append(dev_macro_f1)
+        #self.history["metrics"]["macro_f1"]["dev"].append(dev_macro_f1)
         self.history["metrics"]["accuracy"]["dev"].append(dev_accuracy)
         # self.history["metrics"]["report"]["dev"].append(dev_report)
 
         self.history["metrics"]["micro_f1"]["test"].append(test_f1)
-        self.history["metrics"]["macro_f1"]["test"].append(test_macro_f1)
+        #self.history["metrics"]["macro_f1"]["test"].append(test_macro_f1)
         self.history["metrics"]["accuracy"]["test"].append(test_accuracy)
-        self.history["metrics"]["report"]["test"].append(test_report)
+        # self.history["metrics"]["report"]["test"].append(test_report)
 
         self.history["layers_weights"].append(torch.nn.functional.softmax(self.edge_probe_model.weighing_params).tolist())
         print('[%d] loss: %.4f, val_loss: %.4f, test_loss: %.4f' % (epoch, self.history["loss"]["train"][-1], self.history["loss"]["dev"][-1], self.history["loss"]["test"][-1]))
