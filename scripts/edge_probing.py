@@ -286,7 +286,7 @@ class Dataset_handler:
             self.json_to_dataset('./edge-probing-datasets/metaphor/trofi/test.json', data_type="test", fraction = frac, to_sentence_span=True)
         elif dataset_info.dataset_name == "lcc":
             frac = 1
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_train10_current.json', data_type="train", fraction = frac)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_train10_current.json', data_type="train", fraction = 0.43984008)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_src_concept":
@@ -301,12 +301,12 @@ class Dataset_handler:
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_src_concept_current.json', data_type="test", fraction = frac, ignore_classes = self.dataset_info.ignore_classes)
         elif dataset_info.dataset_name == "lcc_fa":
             frac = 1
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', data_type="train", fraction = frac)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', data_type="train", fraction = 0.94571799)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_es":
             frac = 1
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_train10_current.json', data_type="train", fraction = frac)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_train10_current.json', data_type="train", fraction = 0.60313082)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_ru":
@@ -316,55 +316,55 @@ class Dataset_handler:
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_en_fa":
             frac = 1
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_train10_current.json', data_type="train", fraction = 0.4650858)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_train10_current.json', data_type="train", fraction = 0.43984008)
             # self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_train10_current.json', data_type="train", fraction = 1)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_en_es":
             frac = 1
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_train10_current.json', data_type="train", fraction = 0.72926148)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_train10_current.json', data_type="train", fraction = 0.43984008)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_en_ru":
             frac = 1
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_train10_current.json', data_type="train", fraction = 0.439840076)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_train10_current.json', data_type="train", fraction = 0.43984008)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_es_fa":
             frac = 1
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_train10_current.json', data_type="train", fraction = 0.63774912)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_train10_current.json', data_type="train", fraction = 0.60313082)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_es_ru":
             frac = 1
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_train10_current.json', data_type="train", fraction = 0.60313081856)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_train10_current.json', data_type="train", fraction = 0.60313082)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_test10_current.json', data_type="test", fraction = frac)
+        elif dataset_info.dataset_name == "lcc_es_en":
+            frac = 1
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_train10_current.json', data_type="train", fraction = 0.60313082)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="dev", fraction = 0.01)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_fa_ru":
             frac = 1
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', data_type="train", fraction = 0.9457179930)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', data_type="train", fraction = 0.94571799)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_fa_en":
             frac = 1
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', data_type="train", fraction = frac)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', data_type="train", fraction = 0.94571799)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="test", fraction = frac)
-        elif dataset_info.dataset_name == "lcc_es_en":
+        elif dataset_info.dataset_name == "lcc_fa_es":
             frac = 1
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_train10_current.json', data_type="train", fraction = frac)
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="dev", fraction = 0.01)
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="test", fraction = frac)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', data_type="train", fraction = 0.94571799)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="dev", fraction = 0.01)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_ru_en":
             frac = 1
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_train10_current.json', data_type="train", fraction = frac)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/en/en_test10_current.json', data_type="test", fraction = frac)
-        elif dataset_info.dataset_name == "lcc_fa_es":
-            frac = 1
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', data_type="train", fraction = frac)
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="dev", fraction = 0.01)
-            self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/es/es_test10_current.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_ru_es":
             frac = 1
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_train10_current.json', data_type="train", fraction = frac)
@@ -1314,9 +1314,9 @@ class Edge_probe_trainer(Trainer):
                 self.vprint("Done")
                 
                 
-                #if i/batch_size % 50 == 0:
-                #    self.update_history(epoch + 1, train_loss = running_loss / steps)
-                #    self.draw_weights(epoch)
+                if i/batch_size % 50 == 0:
+                    self.update_history(epoch + 1, train_loss = running_loss / steps)
+                    self.draw_weights(epoch)
                 
                 # print(f"loss: {running_loss / steps}")
 
@@ -1351,11 +1351,11 @@ class Edge_probe_trainer(Trainer):
                 running_loss += loss.item()
                 steps += 1
 
-        print(preds[0:4])
+        # print(preds[0:4])
         preds = preds.cpu().argmax(-1)
         y_true = np.array(tokenized_dataset["one_hot_label"]).argmax(-1)
-        print(preds[0:4])
-        print(y_true[0:4])
+        # print(preds[0:4])
+        # print(y_true[0:4])
         labels_list = self.dataset_handler.labels_list
         if self.dataset_handler.dataset_info.dataset_name == "semeval":
             other_idx = labels_list.index("Other")
@@ -1373,7 +1373,7 @@ class Edge_probe_trainer(Trainer):
         
         report = classification_report(y_true, preds, target_names=labels_list, labels=range(len(labels_list)))
         if print_metrics:
-            if not just_micro:
+            if not just_micro and desc == "Test Loss":
                 print(report)
             print("MICRO F1:", micro_f1)
         return running_loss / steps, micro_f1, macro_f1, accuracy, report
