@@ -1316,7 +1316,7 @@ class Edge_probe_trainer(Trainer):
                 
                 if i/batch_size % 50 == 0:
                     self.update_history(epoch + 1, train_loss = running_loss / steps)
-                    self.draw_weights(epoch)
+                    # self.draw_weights(epoch)
                 
                 # print(f"loss: {running_loss / steps}")
 
