@@ -165,6 +165,7 @@ dataset_info_dict = {
     "lcc_ru_fa": Dataset_info("lcc_ru_fa", num_of_spans=1),
     "lcc_ru_en": Dataset_info("lcc_ru_en", num_of_spans=1),
     "lcc_es_en": Dataset_info("lcc_es_en", num_of_spans=1),
+    "cross_trofi_vua_verb": Dataset_info("cross_trofi_vua_verb", num_of_spans=1),
 }
 
 model_checkpoint = sys.argv[1]
@@ -375,6 +376,11 @@ class Dataset_handler:
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_train10_current.json', data_type="train", fraction = frac)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/ru/ru_test10_current.json', data_type="dev", fraction = 0.01)
             self.json_to_dataset('./edge-probing-datasets/metaphor/lcc/fa/fa_test10_current.json', data_type="test", fraction = frac)
+        elif dataset_info.dataset_name == "cross_trofi_vua_verb":
+            frac = 1
+            self.json_to_dataset('./edge-probing-datasets/metaphor/trofi/train.json', data_type="train", fraction = frac)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/trofi/train.json', data_type="dev", fraction = 0.01)
+            self.json_to_dataset('./edge-probing-datasets/metaphor/vua/verb_test.json', data_type="test", fraction = frac)
         elif dataset_info.dataset_name == "lcc_en+fa_fa":
             frac = 1
             self.merge_files(['./edge-probing-datasets/metaphor/lcc/fa/fa_train10_current.json', 
