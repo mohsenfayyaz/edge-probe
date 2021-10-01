@@ -53,7 +53,7 @@ dataset_info_dict = {
     "ner": Dataset_info("ner", num_of_spans=1),
     "srl": Dataset_info("srl", num_of_spans=2),
     "coref": Dataset_info("coref", num_of_spans=2),
-    "semeval": Dataset_info("semeval", num_of_spans=2, ignore_classes=["Other"]),
+    "semeval": Dataset_info("semeval", num_of_spans=2),
     "dpr": Dataset_info("dpr", num_of_spans=2),
     "vua_verb": Dataset_info("vua_verb", num_of_spans=1),
     "vua_pos": Dataset_info("vua_pos", num_of_spans=1),
